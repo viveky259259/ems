@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Update Task</title>
+</head>
+<body>
+	<div ng-controller="updateTaskCtrl">
+			<h2>{{confirmationMessage}}</h2>
+	</div>
+<div ng-controller="editTaskCtrl">
+		<h2>{{confirmationMessage}}</h2>
+<form name="updateTaskForm">
+	<label for="Task">Task Id</label>
+	<input type="text" ng-model="taskId" placeholder="Task" class="form-control" readonly required>
+	
+	<label for="Task">Task Title </label>
+	<input type="text" ng-model="taskTitle" placeholder="Task Title" class="form-control" required>
+	
+	<label for="Task">Task Status </label>
+
+	<select class="form-control" ng-model="taskStatus"  ng-options="taskStatus for taskStatus in taskStatuses" required>
+	</select>
+
+
+	<label for="Task">Task Comment</label>
+	<input type="text" ng-model="taskComment" placeholder="Task Comment" class="form-control" required>
+	
+	<label for="Task">Assign to Employee</label>
+	
+	<select class="form-control" ng-model="empId" placeholder="Employee Id" ng-options="employeeId for employeeId in employeeIds" required>
+	</select>
+	
+</form>
+
+<div ng-controller="updateTaskCtrl">
+<button ng-click="updateTask()" ng-disabled="updateTaskForm.$invalid">Update Task</button>
+
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>View Task</title>
+</head>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<body>
+<div ng-controller="viewTaskCtrl">
+		<div class="container">
+				<div class="row">
+					<div class="col-xs-6">
+	
+		<div id="accordion" class="panel-group">
+		<div class="panel panel-primary" ng-repeat="task in tasks ">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+							<a data-target="#{{task.tId}}" data-toggle="collapse"
+							data-parent="#accordion" style="cursor: pointer;">
+							 <span class="glyphicon glyphicon-plus-sign"></span>
+						 {{task.tTitle}}
+						 </a>
+					</h4>
+				</div>
+				<div id="{{task.tId}}" class="panel-collapse collapse">
+					<div class="panel-body">
+						<h2>ID </h2><h4>{{task.tId}}</h4>
+						<h2>Comments </h2><h4>{{task.tComments}}</h4>
+						<button ng-click="deleteTask(task.tId)" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-remove"></span>Remove</button>
+					
+						<a href="#updateTask/{{task.tId}}"> <button type="button" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-edit"></span>Edit</button></a>
+							
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	</div>
+	
+	
+	
+	
+		
+	
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+		</script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+		<script type="text/javascript">
+			$('.collapse').on('shown.bs.collapse', function () {
+				$(this).parent().find('.glyphicon-plus-sign')
+					   .removeClass('glyphicon-plus-sign')
+					   .addClass('glyphicon-minus-sign');
+			}).on('hidden.bs.collapse', function () {
+				$(this).parent().find(".glyphicon-minus-sign")
+					   .removeClass("glyphicon-minus-sign")
+					   .addClass("glyphicon-plus-sign");
+			});
+	
+			$('#btnExpandAll').click(function () {
+				$('.panel-collapse.collapse').collapse('show');
+			});
+	
+			$('#btnCollapseAll').click(function () {
+				$('.panel-collapse.collapse.in').collapse('hide');
+			});
+		</script>
+		
+</div>
+
+</body>
+</html>

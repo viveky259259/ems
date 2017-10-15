@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add Task</title>
+</head>
+<body>
+<div ng-controller="addTaskCtrl">
+		<h2>{{confirmationMessage}}</h2>
+<form name="addTaskForm">
+	<label for="Task">Task Id</label>
+	<input type="text" ng-model="taskId" placeholder="Task" class="form-control" required readonly>
+	
+	<label for="Task">Task Title </label>
+	<input type="text" ng-model="taskTitle" placeholder="Task Title" class="form-control" required>
+	
+	<label for="Task">Task Status </label>
+	<select class="form-control" ng-model="taskStatus"  ng-options="taskStatus for taskStatus in taskStatuses" required>
+	</select>
+	
+	<label for="Task">Task Comment</label>
+	<input type="text" ng-model="taskComment" placeholder="Task Comment" class="form-control" required>
+	
+	<label for="Task">Assign to Employee</label>
+	<select class="form-control" ng-model="empId" placeholder="Employee Id" ng-options="employeeId for employeeId in employeeIds" required>
+	</select>
+	
+</form>
+<button ng-click="addTask()" class="btn btn-default" ng-disabled="addTaskForm.$invalid"> Add Task</button>
+</div>
+
+</body>
+</html>

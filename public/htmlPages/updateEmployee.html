@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Update Employee</title>
+</head>
+<body>
+	
+<div ng-controller="editEmployeeCtrl">
+<h2>{{confirmationMessage}}</h2>
+	<label for="EmployeeId">Employee Id</label>
+	<input type="text" ng-model="employeeId" placeholder="Id" class="form-control" readonly required>
+
+	<label for="EmployeeName">Employee Name</label>
+	<input type="text" ng-model="employeeName" placeholder="Name" class="form-control" required>
+
+
+	<label for="EmployeePassword">Employee Password</label>
+	<input type="text" ng-model="employeePassword" placeholder="Password" class="form-control" required>
+
+	<label for="EmployeeContactNumber">Contact Number</label>
+	<input type="text" ng-model="employeeContactNumber" placeholder="Contact Number" class="form-control" max=10 required>
+
+	<label for="EmployeeAddress">Address</label>
+	<input type="text" ng-model="employeeAddress" placeholder="Employee Address" class="form-control" required>
+
+	<label for="EmployeeGender">Gender</label>
+	<input type="text" ng-model="employeeGender" placeholder="Employee Gender" class="form-control" required>
+
+	<label for="EmployeeEmailId">EmailId</label>
+	<input type="text" ng-model="employeeEmailId" placeholder="Email Id" class="form-control" required> 
+	
+	<label for="EmployeeQualification">Qualification</label>
+	<input type="text" ng-model="employeeQualification" placeholder="Qualification" class="form-control" required>
+
+	<label for="EmployeeAadharNumber">Aadhar Number</label>
+	<input  ng-model="employeeAadharNumber" placeholder="Aadhar Number" class="form-control" required>
+
+	<label for="EmployeeDateOfBirth">Date of Birth</label>
+	<input  ng-model="employeeDateOfBirth" placeholder="Date of Birth" class="form-control" required> 
+<div ng-controller="updateEmployeeCtrl">
+    <button class="btn btn-primary" ng-click="updateEmployee()">Update Profile</button>
+</div>
+{{h}}
+
+</div>
+
+</body>
+</html>
